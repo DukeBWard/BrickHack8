@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <MediaTransportControls x:Name="MediaControls" HorizontalAlignment="Center" Margin="0,903,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
