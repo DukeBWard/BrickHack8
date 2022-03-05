@@ -5,11 +5,11 @@ namespace ModSynth.Rendering
 {
     public class AudioRenderer
     {
-        private SynthGraph outputNode = new SynthGraph();
+        private SynthGraph graph = new SynthGraph();
 
         protected AudioFrame GenerateFrame(AudioFrame frame)
         {
-            outputNode.OutputNode.Execute(frame);
+            graph.OutputNode.Execute(frame);
             return frame;
         }
     }
