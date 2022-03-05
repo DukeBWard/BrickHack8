@@ -25,6 +25,8 @@ namespace ModSynth.UI.WinUI.Rendering
         private double _theta = 0;
         private bool _isPlaying = false;
 
+        public event EventHandler<float[]> FramePlayed;
+
         /// <summary>
         /// Gets a value indicating whether or not the <see cref="AudioRenderer"/> is initialized.
         /// </summary>
@@ -164,6 +166,7 @@ namespace ModSynth.UI.WinUI.Rendering
                 }
             }
 
+            FramePlayed?.Invoke(this, generatedFrame.Payload);
             return frame;
         }
 

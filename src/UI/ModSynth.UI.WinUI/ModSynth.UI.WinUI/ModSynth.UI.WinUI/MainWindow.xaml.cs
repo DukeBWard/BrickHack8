@@ -18,7 +18,10 @@ namespace ModSynth.UI.WinUI
         {
             this.InitializeComponent();
             _renderer = new AudioGraphRenderer();
+            VisualizerRunner = new VisualizerRunner(_renderer);
         }
+
+        public VisualizerRunner VisualizerRunner { get; }
 
         private async void myButton_Click(object sender, RoutedEventArgs e)
         {
