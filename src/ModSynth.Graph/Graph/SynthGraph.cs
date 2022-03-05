@@ -2,6 +2,7 @@
 using ModSynth.Common.Models;
 using ModSynth.Graph.Connections;
 using ModSynth.Graph.Connections.Interfaces;
+using ModSynth.Graph.Nodes.Conversion;
 using ModSynth.Graph.Nodes.Input;
 using ModSynth.Graph.Nodes.Interfaces;
 using ModSynth.Graph.Nodes.Output;
@@ -25,12 +26,15 @@ namespace ModSynth.Graph
 
             // Create Nodes
             TuningNode tuning = new TuningNode();
+            NoteToFrequencyNode a3Freq = new NoteToFrequencyNode();
+            a3Freq.InPort.Fallback = new Note(NoteName.A, 3);
+            NoteToFrequencyNode c4Freq = new NoteToFrequencyNode();
+            c4Freq.InPort.Fallback = new Note(NoteName.C, 4);
+            NoteToFrequencyNode e4Freq = new NoteToFrequencyNode();
+            e4Freq.InPort.Fallback = new Note(NoteName.E, 4);
             WaveGeneratorNode A3Wave = new WaveGeneratorNode();
-            A3Wave.NoteInPort.Fallback = new Note(NoteName.A, 3);
             WaveGeneratorNode C4Wave = new WaveGeneratorNode();
-            C4Wave.NoteInPort.Fallback = new Note(NoteName.C, 4);
             WaveGeneratorNode E4Wave = new WaveGeneratorNode();
-            E4Wave.NoteInPort.Fallback = new Note(NoteName.E, 4);
             MixPCMNode mix1 = new MixPCMNode();
             MixPCMNode mix2 = new MixPCMNode();
 
@@ -43,9 +47,12 @@ namespace ModSynth.Graph
             AddNode(mix2);
 
             // Create Connections
-            CreateConnection(tuning.OutPort, A3Wave.TuningInPort);
-            CreateConnection(tuning.OutPort, C4Wave.TuningInPort);
-            CreateConnection(tuning.OutPort, E4Wave.TuningInPort);
+            CreateConnection(tuning.OutPort, a3Freq.TuningInPort);
+            CreateConnection(tuning.OutPort, c4Freq.TuningInPort);
+            CreateConnection(tuning.OutPort, e4Freq.TuningInPort);
+            CreateConnection(a3Freq.OutPort, A3Wave.FrequencyInPort);
+            CreateConnection(c4Freq.OutPort, C4Wave.FrequencyInPort);
+            CreateConnection(e4Freq.OutPort, E4Wave.FrequencyInPort);
             CreateConnection(A3Wave.WaveOutPort, mix1.WaveInPortA);
             CreateConnection(C4Wave.WaveOutPort, mix1.WaveInPortB);
             CreateConnection(mix1.WaveOutPort, mix2.WaveInPortA);
