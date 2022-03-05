@@ -4,4 +4,10 @@
     <TargetFrameworks>netstandard2.1;net6.0</TargetFrameworks>
 </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ModSynth.Common\ModSynth.Common.csproj" />
+    <ProjectReference Include="..\ModSynth.Graph\ModSynth.Graph.csproj" />
+    <ProjectReference Include="..\ModSynth.Rendering\ModSynth.Rendering.csproj" />
+  </ItemGroup>
+
 </Project>
