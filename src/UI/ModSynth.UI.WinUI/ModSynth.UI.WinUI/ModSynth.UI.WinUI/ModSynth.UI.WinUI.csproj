@@ -15,4 +15,10 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\ModSynth\ModSynth.csproj" />
+    <ProjectReference Include="..\..\..\ModSynth.UI.AudioGraph\ModSynth.UI.AudioGraph.csproj" />
+    <ProjectReference Include="..\..\..\ModSynth.ViewModels\ModSynth.ViewModels.csproj" />
+  </ItemGroup>
 </Project>
