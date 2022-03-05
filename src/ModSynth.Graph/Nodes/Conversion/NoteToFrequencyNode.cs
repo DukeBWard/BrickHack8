@@ -25,14 +25,7 @@ namespace ModSynth.Graph.Nodes.Conversion
         {
             Note note = InPort.Execute(frame);
             Tuning tuning = TuningInPort.Execute(frame);
-            OutPort.Value = GetFrequency(note, tuning);
-        }
-
-        private float GetFrequency(Note note, Tuning tuning)
-        {
-            int n = note - tuning.BasisNote;
-            float coefficient = MathF.Pow(2, (float)n / 12);
-            return tuning.BasisFrequency * coefficient;
+            OutPort.Value = tuning.TuneNote(note);
         }
     }
 }
