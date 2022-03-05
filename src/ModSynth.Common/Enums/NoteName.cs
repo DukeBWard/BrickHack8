@@ -1,4 +1,4 @@
-﻿namespace Synthetics.Common.Enums
+﻿namespace ModSynth.Common.Enums
 {
     public enum NoteName
     {

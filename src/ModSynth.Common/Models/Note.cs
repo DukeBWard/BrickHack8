@@ -1,7 +1,4 @@
-﻿using Synthetics.Common.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ModSynth.Common.Enums;
 
 namespace ModSynth.Common.Models
 {
