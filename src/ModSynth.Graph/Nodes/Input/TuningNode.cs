@@ -8,7 +8,7 @@ namespace ModSynth.Graph.Nodes.Input
 {
     public class TuningNode : INode
     {
-        private Tuning _tuning = new Tuning(TuningType.EqualTempered, new Note(NoteN.A, 4), 440);
+        private Tuning _tuning = new Tuning(TuningType.EqualTempered, new Note(NoteName.A, 4), 440);
 
         public TuningNode()
         {

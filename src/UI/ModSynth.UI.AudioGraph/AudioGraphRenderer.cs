@@ -9,6 +9,8 @@ using Windows.Media.Devices;
 using Windows.Media.MediaProperties;
 using Windows.Media.Render;
 using WinRT;
+using GraphFrame = Windows.Media.AudioFrame;
+using AudioFrame = ModSynth.Common.AudioFrame;
 
 namespace ModSynth.UI.WinUI.Rendering
 {
@@ -135,10 +137,15 @@ namespace ModSynth.UI.WinUI.Rendering
             return await DeviceInformation.CreateFromIdAsync(id);
         }
 
-        private unsafe AudioFrame GenerateAudioFrame(uint samples)
+        private unsafe GraphFrame GenerateAudioFrame(uint samples)
         {
+            double sampleIncrement = 1d / (int)_graph.EncodingProperties.SampleRate;
+            AudioFrame generatedFrame = new AudioFrame(_theta, (int)samples, sampleIncrement);
+            generatedFrame = GenerateFrame(generatedFrame);
+            _theta += samples * sampleIncrement;
+
             uint bufferSize = samples * sizeof(float);
-            AudioFrame frame = new AudioFrame(bufferSize);
+            GraphFrame frame = new GraphFrame(bufferSize);
 
             using (AudioBuffer buffer = frame.LockBuffer(AudioBufferAccessMode.Write))
             using (IMemoryBufferReference reference = buffer.CreateReference())
@@ -147,20 +154,13 @@ namespace ModSynth.UI.WinUI.Rendering
                 uint capcityInBytes;
                 float* dataInFloat;
 
-                (reference.As<IMemoryBufferByteAccess>()).GetBuffer(out dataInBytes, out capcityInBytes);
+                reference.As<IMemoryBufferByteAccess>().GetBuffer(out dataInBytes, out capcityInBytes);
 
                 dataInFloat = (float*)dataInBytes;
 
-                float freq = 400; // 400Hz (A4)
-                float amplitude = 0.3f;
-                int sampleRate = (int)_graph.EncodingProperties.SampleRate;
-                double sampleIncrement = (freq * (Math.PI * 2)) / sampleRate;
-
                 for (int i = 0; i < samples; i++)
                 {
-                    double sinValue = amplitude * Math.Sin(_theta);
-                    dataInFloat[i] = (float)sinValue;
-                    _theta += sampleIncrement;
+                    dataInFloat[i] = generatedFrame.Payload[i];
                 }
             }
 
@@ -173,7 +173,7 @@ namespace ModSynth.UI.WinUI.Rendering
 
             if (requestedSamples != 0)
             {
-                AudioFrame audioFrame = GenerateAudioFrame(requestedSamples);
+                GraphFrame audioFrame = GenerateAudioFrame(requestedSamples);
                 _inputNode.AddFrame(audioFrame);
             }
         }
