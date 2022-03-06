@@ -14,10 +14,10 @@
         <controls:NoteNode Width="100" Height="50" Margin="10,275,1390,675"/>
         <controls:NoteNode Width="100" Height="50" Margin="10,475,1390,475"/>
         <controls:NoteNode Width="100" Height="50" Margin="10,375,1390,575"/>
-
-        <controls:WaveGen Margin="261,250,846,650"/>
+        <controls:WaveGen Margin="290,350,810,550" Height="100" Width="400"/>
+        <controls:WaveGen Margin="290,500,810,400" Height="100" Width="400"/>
+        <controls:WaveGen Margin="290,200,810,700" Height="100" Width="400"/>
         <ComboBox Width="200" Margin="10,10,0,0"/>
-        <controls:WaveGen Margin="261,450,846,450"/>
-        <controls:WaveGen Margin="261,350,846,550"/>
+        
     </Grid>
 </Page>
