@@ -135,6 +135,9 @@
     <Compile Include="Views\Chord3View.xaml.cs">
       <DependentUpon>Chord3View.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Default.xaml.cs">
+      <DependentUpon>Default.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -173,6 +176,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Chord3View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Default.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
