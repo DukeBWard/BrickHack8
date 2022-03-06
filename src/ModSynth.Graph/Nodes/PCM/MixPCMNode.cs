@@ -15,11 +15,11 @@ namespace ModSynth.Graph.Nodes.PCM
 
         public InPort<AudioFrame> WaveInPortA { get; set; }
 
-        public bool UseA { get; set; }
+        public bool UseA { get; set; } = true;
 
         public InPort<AudioFrame> WaveInPortB { get; set; }
 
-        public bool UseB { get; set; }
+        public bool UseB { get; set; } = true;
 
         public OutPort<AudioFrame> WaveOutPort { get; }
 
