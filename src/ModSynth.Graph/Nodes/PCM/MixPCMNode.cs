@@ -31,8 +31,8 @@ namespace ModSynth.Graph.Nodes.PCM
             for (int i = 0; i < frame.Samples; i++)
             {
                 frame.Payload[i] = 0;
-                if (UseA) frame.Payload[i] = a.Payload[i];
-                if (UseB) frame.Payload[i] = b.Payload[i];
+                if (UseA) frame.Payload[i] += a.Payload[i];
+                if (UseB) frame.Payload[i] += b.Payload[i];
             }
 
             WaveOutPort.Value = frame;
