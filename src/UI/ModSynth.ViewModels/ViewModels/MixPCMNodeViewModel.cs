@@ -8,9 +8,11 @@ namespace ModSynth.ViewModels.ViewModels
         private MixPCMNode _mPCMNode;
         private bool _useA, _useB;
 
-        public MixPCMNodeViewModel()
+        public MixPCMNodeViewModel(MixPCMNode node)
         {
-            _mPCMNode = new MixPCMNode();
+            _mPCMNode = node;
+            _useA = _mPCMNode.UseA;
+            _useB = _mPCMNode.UseB;
         }
 
         public MixPCMNode MixPCMNode 

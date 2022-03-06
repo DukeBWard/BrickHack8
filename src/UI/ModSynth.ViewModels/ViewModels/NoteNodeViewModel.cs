@@ -9,11 +9,10 @@ namespace ModSynth.ViewModels
         private NoteNode _noteNode;
         private string _noteString;
 
-        public NoteNodeViewModel(String stringNote)
+        public NoteNodeViewModel(NoteNode node)
         {
-            _noteNode = new NoteNode();
-            Note.TryParse(stringNote, out Note note);
-            _noteNode.Note = note;
+            _noteNode = node;
+            _noteString = node.Note.ToString();
         }
 
         public string NoteString 

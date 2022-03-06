@@ -10,6 +10,6 @@
     d:DesignWidth="100">
 
     <Border CornerRadius="8" BorderThickness="2" BorderBrush="Black">
-        <TextBox PlaceholderText="Note" CornerRadius="8" Width="100" Height="50" Margin="-2,-2,-2,-2"/>
+        <TextBox Text="{x:Bind ViewModel.NoteString, Mode=TwoWay}" PlaceholderText="Note" CornerRadius="8" Width="100" Height="50" Margin="-2,-2,-2,-2"/>
     </Border>
 </UserControl>

@@ -11,8 +11,8 @@
 
     <Border BorderBrush="Black" CornerRadius="8" BorderThickness="2" Padding="4">
         <Grid Height="200" CornerRadius="8">
-            <ToggleSwitch Header="Channel A" VerticalAlignment="Top" CornerRadius="8" HorizontalAlignment="Center"/>
-            <ToggleSwitch Header="Channel B" Margin="0,60,0,0" VerticalAlignment="Top" CornerRadius="8" HorizontalAlignment="Center"/>
+            <ToggleSwitch Header="Channel A" IsOn="{x:Bind ViewModel.UseA, Mode=TwoWay}" VerticalAlignment="Top" CornerRadius="8" HorizontalAlignment="Center"/>
+            <ToggleSwitch Header="Channel B" IsOn="{x:Bind ViewModel.UseB, Mode=TwoWay}" Margin="0,60,0,0" VerticalAlignment="Top" CornerRadius="8" HorizontalAlignment="Center"/>
         </Grid>
     </Border>
 

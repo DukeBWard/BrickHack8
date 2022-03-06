@@ -13,6 +13,11 @@ namespace ModSynth.Graph.Nodes.Input
             OutPort = new OutPort<Note>(this);
         }
 
+        public NoteNode(Note note) : this()
+        {
+            Note = note;
+        }
+
         public Note Note { get; set; } = new Note(NoteName.A, 4);
 
         public OutPort<Note> OutPort { get; }

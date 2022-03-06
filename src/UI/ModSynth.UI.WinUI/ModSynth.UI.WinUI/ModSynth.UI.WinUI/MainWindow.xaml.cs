@@ -36,7 +36,7 @@ namespace ModSynth.UI.WinUI
             switch (pageName)
             {
                 case "Chord 3":
-                    Frame.Content = new Chord3View() { DataContext = _mainViewModel };
+                    Frame.Content = new Chord3View(_mainViewModel);
                     break;
                 case "Default":
                     Frame.Content = new DefaultView(_mainViewModel);

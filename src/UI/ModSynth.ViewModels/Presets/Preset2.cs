@@ -15,38 +15,60 @@ namespace ModSynth.ViewModels.Presets
             TuningNode tuning = new TuningNode();
             tuning.BasisNoteInPort.Fallback = new Note(NoteName.A, 4);
             tuning.BasisFrequencyInPort.Fallback = 440;
+            Note1 = new NoteNode(new Note(NoteName.A, 3));
+            Note2 = new NoteNode(new Note(NoteName.C, 4));
+            Note3 = new NoteNode(new Note(NoteName.E, 4));
             NoteToFrequencyNode a3Freq = new NoteToFrequencyNode();
-            a3Freq.InPort.Fallback = new Note(NoteName.A, 3);
             NoteToFrequencyNode c4Freq = new NoteToFrequencyNode();
-            c4Freq.InPort.Fallback = new Note(NoteName.C, 4);
             NoteToFrequencyNode e4Freq = new NoteToFrequencyNode();
-            e4Freq.InPort.Fallback = new Note(NoteName.E, 4);
-            WaveGeneratorNode A3Wave = new WaveGeneratorNode();
-            WaveGeneratorNode C4Wave = new WaveGeneratorNode();
-            WaveGeneratorNode E4Wave = new WaveGeneratorNode();
-            MixPCMNode mix1 = new MixPCMNode();
-            MixPCMNode mix2 = new MixPCMNode();
+            Wave1 = new WaveGeneratorNode();
+            Wave2 = new WaveGeneratorNode();
+            Wave3 = new WaveGeneratorNode();
+            Mix1 = new MixPCMNode();
+            Mix2 = new MixPCMNode();
 
             // Add Nodes
             AddNode(tuning);
-            AddNode(A3Wave);
-            AddNode(C4Wave);
-            AddNode(E4Wave);
-            AddNode(mix1);
-            AddNode(mix2);
+            AddNode(Wave1);
+            AddNode(Wave2);
+            AddNode(Wave3);
+            AddNode(a3Freq);
+            AddNode(c4Freq);
+            AddNode(e4Freq);
+            AddNode(Mix1);
+            AddNode(Mix2);
 
             // Create Connections
+            CreateConnection(Note1.OutPort, a3Freq.InPort);
+            CreateConnection(Note2.OutPort, c4Freq.InPort);
+            CreateConnection(Note3.OutPort, e4Freq.InPort);
             CreateConnection(tuning.OutPort, a3Freq.TuningInPort);
             CreateConnection(tuning.OutPort, c4Freq.TuningInPort);
             CreateConnection(tuning.OutPort, e4Freq.TuningInPort);
-            CreateConnection(a3Freq.OutPort, A3Wave.FrequencyInPort);
-            CreateConnection(c4Freq.OutPort, C4Wave.FrequencyInPort);
-            CreateConnection(e4Freq.OutPort, E4Wave.FrequencyInPort);
-            CreateConnection(A3Wave.WaveOutPort, mix1.WaveInPortA);
-            CreateConnection(C4Wave.WaveOutPort, mix1.WaveInPortB);
-            CreateConnection(mix1.WaveOutPort, mix2.WaveInPortA);
-            CreateConnection(E4Wave.WaveOutPort, mix2.WaveInPortB);
-            SynthGraph.CreateOutputConnection(mix2.WaveOutPort);
+            CreateConnection(a3Freq.OutPort, Wave1.FrequencyInPort);
+            CreateConnection(c4Freq.OutPort, Wave2.FrequencyInPort);
+            CreateConnection(e4Freq.OutPort, Wave3.FrequencyInPort);
+            CreateConnection(Wave1.WaveOutPort, Mix1.WaveInPortA);
+            CreateConnection(Wave2.WaveOutPort, Mix1.WaveInPortB);
+            CreateConnection(Mix1.WaveOutPort, Mix2.WaveInPortA);
+            CreateConnection(Wave3.WaveOutPort, Mix2.WaveInPortB);
+            SynthGraph.CreateOutputConnection(Mix2.WaveOutPort);
         }
+
+        public NoteNode Note1 { get; }
+
+        public NoteNode Note2 { get; }
+
+        public NoteNode Note3 { get; }
+
+        public WaveGeneratorNode Wave1 { get; }
+
+        public WaveGeneratorNode Wave2 { get; }
+
+        public WaveGeneratorNode Wave3 { get; }
+
+        public MixPCMNode Mix1 { get; }
+
+        public MixPCMNode Mix2 { get; }
     }
 }

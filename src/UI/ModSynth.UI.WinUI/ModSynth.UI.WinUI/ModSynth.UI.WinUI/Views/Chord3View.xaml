@@ -27,12 +27,12 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <controls:NoteNode x:Name="Note1" Width="100" Height="50" Grid.Row="0" Grid.Column="0"/>
-                <controls:WaveGen x:Name="Wave1" Height="100" Width="400" Grid.Row="0" Grid.Column="1"/>
-                <controls:NoteNode x:Name="Note2" Width="100" Height="50" Grid.Row="1" Grid.Column="0"/>
-                <controls:WaveGen x:Name="Wave2" Height="100" Width="400" Grid.Row="1" Grid.Column="1"/>
-                <controls:NoteNode x:Name="Note3" Width="100" Height="50" Grid.Row="2" Grid.Column="0"/>
-                <controls:WaveGen x:Name="Wave3" Height="100" Width="400" Grid.Row="2" Grid.Column="1"/>
+                <controls:NoteNode x:Name="Note1" Width="100" Height="50" Grid.Row="0" Grid.Column="0" DataContext="{x:Bind Note1ViewModel, Mode=OneWay}"/>
+                <!--<controls:WaveGen x:Name="Wave1" Height="100" Width="400" Grid.Row="0" Grid.Column="1"/>-->
+                <controls:NoteNode x:Name="Note2" Width="100" Height="50" Grid.Row="1" Grid.Column="0" DataContext="{x:Bind Note2ViewModel, Mode=OneWay}"/>
+                <!--<controls:WaveGen x:Name="Wave2" Height="100" Width="400" Grid.Row="1" Grid.Column="1"/>-->
+                <controls:NoteNode x:Name="Note3" Width="100" Height="50" Grid.Row="2" Grid.Column="0" DataContext="{x:Bind Note3ViewModel, Mode=OneWay}"/>
+                <!--<controls:WaveGen x:Name="Wave3" Height="100" Width="400" Grid.Row="2" Grid.Column="1"/>-->
             </Grid>
             <Grid Grid.Column="1" Padding="48">
                 <Grid.RowDefinitions>
@@ -45,7 +45,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <controls:Mixer Grid.Row="1" Grid.RowSpan="3"/>
+                <controls:Mixer Grid.Row="1" Grid.RowSpan="3" DataContext="{x:Bind Mix1ViewModel, Mode=OneWay}"/>
             </Grid>
             <Grid Grid.Column="2" Padding="24">
                 <Grid.RowDefinitions>
@@ -58,7 +58,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <controls:Mixer Grid.Row="2" Grid.RowSpan="4"/>
+                <controls:Mixer Grid.Row="2" Grid.RowSpan="4" DataContext="{x:Bind Mix2ViewModel, Mode=OneWay}"/>
             </Grid>
         </Grid>
     </Grid>
