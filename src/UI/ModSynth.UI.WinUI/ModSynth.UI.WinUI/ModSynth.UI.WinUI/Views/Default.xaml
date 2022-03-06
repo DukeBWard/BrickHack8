@@ -11,7 +11,7 @@
     d:DesignHeight="125"
     d:DesignWidth="100">
 
-    <Grid Background="Salmon">
-        <controls:WaveGen x:Name="Wave2" Height="100" Width="400" DataContext="{x:Bind WaveViewModel, Mode=OneWay}" Grid.Row="3" Grid.RowSpan="2" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+    <Grid>
+        <controls:WaveGen x:Name="Wave2" Height="100" Width="400" DataContext="{x:Bind WaveViewModel, Mode=OneWay}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="40"/>
     </Grid>
 </UserControl>

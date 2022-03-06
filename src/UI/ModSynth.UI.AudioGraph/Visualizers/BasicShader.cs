@@ -33,6 +33,8 @@ namespace ModSynth.UI.Visualizers
 
             float point = Sample(u);
 
+            point /= 4;
+
             float4 color = new float4(0, 0.1f, 0.8f, 1f);
 
             float4 pixel = float4.Zero;

@@ -9,6 +9,7 @@
     mc:Ignorable="d">
 
     <Grid Background="LightSlateGray">
+        <computesharp:AnimatedComputeShaderPanel ShaderRunner="{x:Bind VisualizerRunner}"/>
         <ContentControl x:Name="Frame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         <StackPanel Orientation="Horizontal" Margin="10,12,0,0">
             <ComboBox Width="200" SelectionChanged="ComboBox_SelectionChanged">

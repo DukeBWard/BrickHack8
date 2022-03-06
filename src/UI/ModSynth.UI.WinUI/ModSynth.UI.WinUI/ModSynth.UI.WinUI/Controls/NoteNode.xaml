@@ -9,7 +9,7 @@
     d:DesignHeight="50"
     d:DesignWidth="100">
 
-    <Border CornerRadius="8" BorderThickness="2" BorderBrush="Black">
+    <Border Background="#7F000000" BorderBrush="#081230" BorderThickness="2" CornerRadius="8">
         <TextBox Text="{x:Bind ViewModel.NoteString, Mode=TwoWay}" PlaceholderText="Note" CornerRadius="8" Width="100" Height="50" Margin="-2,-2,-2,-2"/>
     </Border>
 </UserControl>

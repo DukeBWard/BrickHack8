@@ -1,4 +1,5 @@
-﻿using Microsoft.UI.Xaml;
+﻿using Microsoft.UI;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using ModSynth.UI.WinUI.Rendering;
 using ModSynth.UI.WinUI.Views;

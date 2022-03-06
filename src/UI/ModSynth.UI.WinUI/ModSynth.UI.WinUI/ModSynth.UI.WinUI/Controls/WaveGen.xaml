@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignWidth="400" Height="103">
-    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="8">
+    <Border Background="Black" BorderBrush="#081230" BorderThickness="2" CornerRadius="8">
         <Grid Height="305" VerticalAlignment="Top" HorizontalAlignment="Center">
             <Slider x:Name="Slider" Minimum="0" Maximum="2000" Value="{x:Bind ViewModel.Frequency, Mode=TwoWay}" Margin="45,10,55,230"/>
             <TextBox TextWrapping="Wrap" Text="{x:Bind ViewModel.Frequency, Mode=TwoWay}" PlaceholderText="Frequency" Margin="146,42,146,230" CornerRadius="8"/>
