@@ -68,7 +68,7 @@ namespace ModSynth.Graph
 
         public AudioOutputNode OutputNode { get; }
 
-        public void AddNode(INode node)
+        private void AddNode(INode node)
         {
             Nodes.Add(node);
         }

@@ -16,7 +16,7 @@ namespace ModSynth.ViewModels.ViewModels
         public WaveGeneratorNode WaveGeneratorNode { get => _wgNode; }
 
         public float Frequency 
-        { 
+        {
             get => _frequency;
             set
             {
