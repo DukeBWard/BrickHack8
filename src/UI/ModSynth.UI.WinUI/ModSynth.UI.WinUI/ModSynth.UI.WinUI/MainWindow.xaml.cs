@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml;
 using ModSynth.UI.WinUI.Rendering;
-using System;
+using ModSynth.ViewModels.ViewModels;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -13,11 +13,13 @@ namespace ModSynth.UI.WinUI
     public sealed partial class MainWindow : Window
     {
         private AudioGraphRenderer _renderer;
+        private MainViewModel _mainViewModel;
 
         public MainWindow()
         {
             this.InitializeComponent();
             _renderer = new AudioGraphRenderer();
+            _mainViewModel = new MainViewModel(_renderer);
             VisualizerRunner = new VisualizerRunner(_renderer);
         }
 

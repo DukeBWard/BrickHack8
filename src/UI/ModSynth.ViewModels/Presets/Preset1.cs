@@ -47,7 +47,7 @@ namespace ModSynth.ViewModels.Presets
             CreateConnection(C4Wave.WaveOutPort, mix1.WaveInPortB);
             CreateConnection(mix1.WaveOutPort, mix2.WaveInPortA);
             CreateConnection(E4Wave.WaveOutPort, mix2.WaveInPortB);
-            _synthGraph.CreateOutputConnection(mix2.WaveOutPort);
+            SynthGraph.CreateOutputConnection(mix2.WaveOutPort);
         }
     }
 }

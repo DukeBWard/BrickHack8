@@ -8,11 +8,13 @@ namespace ModSynth.ViewModels.Presets.Abstract
 {
     public abstract class Preset
     {
-        public SynthGraph _synthGraph { get; protected set; }
+        public SynthGraph SynthGraph { get; protected set; }
 
         public Preset()
         {
-            _synthGraph = new SynthGraph();
+            SynthGraph = new SynthGraph();
+            Nodes = new List<INode>();
+            Connections = new List<IConnection>();
         }
 
         public List<INode> Nodes { get; }

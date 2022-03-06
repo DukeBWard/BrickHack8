@@ -3,19 +3,16 @@ using ModSynth.Graph;
 
 namespace ModSynth.Rendering
 {
-    public class AudioRenderer
+    public abstract class AudioRenderer
     {
-        private SynthGraph _graph;
-
-        public AudioRenderer(SynthGraph graph)
-        {
-            _graph = graph; 
-        }
+        public SynthGraph Graph { get; set; }
 
         protected AudioFrame GenerateFrame(AudioFrame frame)
         {
-            _graph.OutputNode.Execute(frame);
+            Graph.OutputNode.Execute(frame);
             return frame;
         }
+
+        public abstract bool Play();
     }
 }

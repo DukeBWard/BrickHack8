@@ -63,7 +63,7 @@ namespace ModSynth.UI.WinUI.Rendering
         /// Begins or resumes playback.
         /// </summary>
         /// <returns>The success status.</returns>
-        public bool Play()
+        public override bool Play()
         {
             if (_graph == null)
                 return false;
