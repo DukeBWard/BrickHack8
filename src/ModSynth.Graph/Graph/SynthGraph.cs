@@ -16,8 +16,8 @@ namespace ModSynth.Graph
 
         public void CreateOutputConnection(IPortOut<AudioFrame> outPort)
         {
-            DirectConnection<AudioFrame> dirCon = 
-                new DirectConnection<AudioFrame>(outPort, OutputNode.InPort);
+            DirectConnection<AudioFrame> directConnection = new DirectConnection<AudioFrame>(outPort, OutputNode.InPort);
+            OutputNode.InPort.SetConnection(directConnection);
         }
     }
 }
