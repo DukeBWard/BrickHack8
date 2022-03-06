@@ -15,6 +15,7 @@
     <None Remove="Controls\WaveGen.xaml" />
     <None Remove="Views\Chord3View.xaml" />
     <None Remove="Views\Default.xaml" />
+    <None Remove="Views\OscilatingView.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,12 @@
     <ProjectReference Include="..\..\..\..\ModSynth\ModSynth.csproj" />
     <ProjectReference Include="..\..\..\ModSynth.UI.AudioGraph\ModSynth.UI.AudioGraph.csproj" />
     <ProjectReference Include="..\..\..\ModSynth.ViewModels\ModSynth.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\OscilatingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
