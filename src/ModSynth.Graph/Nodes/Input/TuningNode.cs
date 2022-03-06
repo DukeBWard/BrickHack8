@@ -8,30 +8,24 @@ namespace ModSynth.Graph.Nodes.Input
 {
     public class TuningNode : INode
     {
-        private Tuning _tuning = new Tuning(TuningType.EqualTempered, new Note(NoteName.A, 4), 440);
-
         public TuningNode()
         {
+            BasisNoteInPort = new InPort<Note>(this);
+            BasisFrequencyInPort = new InPort<float>(this);
             OutPort = new OutPort<Tuning>(this);
         }
 
-        public Note BasisNote
-        {
-            get => _tuning.BasisNote;
-            set => _tuning.BasisNote = value;
-        }
+        public InPort<Note> BasisNoteInPort { get; set; }
 
-        public float BasisFrequency
-        {
-            get => _tuning.BasisFrequency;
-            set => _tuning.BasisFrequency = value;
-        }
+        public InPort<float> BasisFrequencyInPort { get; set; }
 
         public OutPort<Tuning> OutPort { get; }
 
         public void Execute(AudioFrame frame)
         {
-            OutPort.Value = _tuning;
+            Note note = BasisNoteInPort.Execute(frame);
+            float frequency = BasisFrequencyInPort.Execute(frame);
+            OutPort.Value = new Tuning(TuningType.EqualTempered, note, frequency);
         }
     }
 }

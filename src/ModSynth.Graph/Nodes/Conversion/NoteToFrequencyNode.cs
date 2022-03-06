@@ -2,7 +2,6 @@
 using ModSynth.Common.Models;
 using ModSynth.Graph.Nodes.Interfaces;
 using ModSynth.Graph.Ports;
-using System;
 
 namespace ModSynth.Graph.Nodes.Conversion
 {
