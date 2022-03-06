@@ -1,20 +1,17 @@
 ﻿using ModSynth.Graph;
-using ModSynth.Graph.Nodes.Interfaces;
+using ModSynth.ViewModels.Presets;
+using ModSynth.ViewModels.Presets.Abstract;
 
 namespace ModSynth.ViewModels.ViewModels
 {
     public class MainViewModel
     {
         SynthGraph _synthGraph;
-
-        List<INode> preset1 = new List<INode>() 
-        {
-
-        };
+        Preset _preset1 = new Preset1();
 
         public MainViewModel()
         {
-            _synthGraph = new SynthGraph();
+            _synthGraph = _preset1._synthGraph;
         }
     }
 }
