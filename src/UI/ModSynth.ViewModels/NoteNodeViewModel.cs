@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ModSynth.Common.Enums;
+using ModSynth.Graph.Nodes.Input;
 
 namespace ModSynth.ViewModels
 {
-    internal class NoteNodeViewModel
+    internal class NoteNodeViewModel : ObservableObject
     {
+        NoteNode _noteNode;
+
+        public NoteNodeViewModel(String note)
+        {
+            ModSynth.Common.Models.Note.TryParse(note, _noteNode);
+        }
+
+        
     }
 }
