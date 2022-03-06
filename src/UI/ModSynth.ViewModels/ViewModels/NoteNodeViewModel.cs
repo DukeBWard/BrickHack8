@@ -6,8 +6,8 @@ namespace ModSynth.ViewModels
 {
     public class NoteNodeViewModel : ObservableObject
     {
-        NoteNode _noteNode;
-        string _noteString;
+        private NoteNode _noteNode;
+        private string _noteString;
 
         public NoteNodeViewModel(String stringNote)
         {

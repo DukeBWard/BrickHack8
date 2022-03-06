@@ -6,9 +6,9 @@ namespace ModSynth.ViewModels.ViewModels
 {
     public class NoteToFrequencyNodeViewModel : ObservableObject
     {
-        NoteToFrequencyNode _ntfNode;
-        Note _note;
-        Tuning _tuning;
+        private NoteToFrequencyNode _ntfNode;
+        private Note _note;
+        private Tuning _tuning;
 
         public NoteToFrequencyNodeViewModel()
         {

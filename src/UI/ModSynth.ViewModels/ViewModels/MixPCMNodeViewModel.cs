@@ -1,13 +1,12 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using ModSynth.Graph.Nodes.PCM;
-using ModSynth.Common;
 
 namespace ModSynth.ViewModels.ViewModels
 {
     public class MixPCMNodeViewModel : ObservableObject
     {
-        MixPCMNode _mPCMNode;
-        AudioFrame _waveA, _waveB;
+        private MixPCMNode _mPCMNode;
+        private bool _useA, _useB;
 
         public MixPCMNodeViewModel()
         {
@@ -19,23 +18,23 @@ namespace ModSynth.ViewModels.ViewModels
             get => _mPCMNode;
         }
 
-        public AudioFrame WaveFormA
+        public bool UseA
         {
-            get => _waveA;
+            get => _useA;
             set
             {
-                _mPCMNode.WaveInPortA.Fallback = value;
-                _waveA = value;
+                SetProperty(ref _useA, value);
+                _mPCMNode.UseA = value;
             }
         }
 
-        public AudioFrame WaveFormB
+        public bool UseB
         {
-            get => _waveB;
+            get => _useB;
             set
             {
-                _mPCMNode.WaveInPortB.Fallback = value;
-                _waveB = value;
+                SetProperty(ref _useB, value);
+                _mPCMNode.UseB = value;
             }
         }
     }

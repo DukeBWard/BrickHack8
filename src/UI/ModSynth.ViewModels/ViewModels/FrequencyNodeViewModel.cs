@@ -5,8 +5,8 @@ namespace ModSynth.ViewModels.ViewModels
 {
     public class FrequencyNodeViewModel : ObservableObject
     {
-        FrequencyNode _freqNode;
-        float _frequency;
+        private FrequencyNode _freqNode;
+        private float _frequency;
 
         public FrequencyNodeViewModel()
         {
