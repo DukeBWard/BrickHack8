@@ -24,55 +24,6 @@
                 <SymbolIcon Symbol="Stop"/>
             </Button>
         </StackPanel>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <controls:NoteNode x:Name="Note1" Width="100" Height="50" Grid.Row="0" Grid.Column="0"/>
-                <controls:WaveGen x:Name="Wave1" Height="100" Width="400" Grid.Row="0" Grid.Column="1"/>
-                <controls:NoteNode x:Name="Note2" Width="100" Height="50" Grid.Row="1" Grid.Column="0"/>
-                <controls:WaveGen x:Name="Wave2" Height="100" Width="400" Grid.Row="1" Grid.Column="1"/>
-                <controls:NoteNode x:Name="Note3" Width="100" Height="50" Grid.Row="2" Grid.Column="0"/>
-                <controls:WaveGen x:Name="Wave3" Height="100" Width="400" Grid.Row="2" Grid.Column="1"/>
-            </Grid>
-            <Grid Grid.Column="1" Padding="48">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <controls:Mixer Grid.Row="1" Grid.RowSpan="3"/>
-            </Grid>
-            <Grid Grid.Column="2" Padding="24">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <controls:Mixer Grid.Row="2" Grid.RowSpan="4"/>
-            </Grid>
-        </Grid>
+        <TextBlock x:Name="WelcomeMsg" TextWrapping="Wrap" Text="WELCOME TO THE MOD SYNTH" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" FontFamily="Broadway" FontStyle="Normal"/>
     </Grid>
 </Page>

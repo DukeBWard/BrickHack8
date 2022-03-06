@@ -30,6 +30,8 @@ namespace ModSynth.UI.UWP
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            WelcomeMsg.Visibility = Visibility.Collapsed;
+
             string pageName = (string)((ComboBoxItem)e.AddedItems[0]).Content;
 
             switch (pageName)
