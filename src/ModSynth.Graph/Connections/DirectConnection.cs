@@ -6,7 +6,7 @@ namespace ModSynth.Graph.Connections
 {
     public class DirectConnection<T> : IConnection<T, T>
     {
-        internal DirectConnection(IPortOut<T> outPrt, IPortIn<T> inPort)
+        public DirectConnection(IPortOut<T> outPrt, IPortIn<T> inPort)
         {
             OutPort = outPrt;
             InPort = inPort;

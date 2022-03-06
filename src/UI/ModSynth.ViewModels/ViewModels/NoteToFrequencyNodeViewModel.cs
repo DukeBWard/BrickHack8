@@ -24,6 +24,7 @@ namespace ModSynth.ViewModels.ViewModels
                 _ntfNode.InPort.Fallback = value;
             }
         }
+
         public Tuning Tuning
         {
             get => _tuning;
