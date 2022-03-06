@@ -3,12 +3,21 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ModSynth.UI.UWP"
+    xmlns:controls="using:ModSynth.UI.UWP.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <MediaTransportControls x:Name="MediaControls" HorizontalAlignment="Center" Margin="0,903,0,0" VerticalAlignment="Top"/>
+    <Grid Background="PowderBlue">
+        <MediaTransportControls x:Name="Media_Controls" Margin="0,903,0,0"/>
+        <controls:NoteNode Width="100" Height="50" Margin="10,275,1390,675"/>
+        <controls:NoteNode Width="100" Height="50" Margin="10,475,1390,475"/>
+        <controls:NoteNode Width="100" Height="50" Margin="10,375,1390,575"/>
+        <controls:WaveGen Margin="290,350,810,550" Height="100" Width="400"/>
+        <controls:WaveGen Margin="290,500,810,400" Height="100" Width="400"/>
+        <controls:WaveGen Margin="290,200,810,700" Height="100" Width="400"/>
+        <ComboBox Width="200" Margin="10,10,0,0"/>
+        
     </Grid>
 </Page>
