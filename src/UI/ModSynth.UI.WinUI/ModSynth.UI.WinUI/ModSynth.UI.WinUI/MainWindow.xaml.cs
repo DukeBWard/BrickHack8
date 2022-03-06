@@ -36,10 +36,10 @@ namespace ModSynth.UI.WinUI
             switch (pageName)
             {
                 case "Chord 3":
-                    ViewFrame.Navigate(typeof(Chord3View));
+                    Frame.Content = new Chord3View() { DataContext = _mainViewModel };
                     break;
                 case "Default":
-                    ViewFrame.Navigate(typeof(Default));
+                    Frame.Content = new DefaultView(_mainViewModel);
                     break;
             }
         }

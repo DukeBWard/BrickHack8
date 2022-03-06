@@ -1,20 +1,29 @@
-﻿using ModSynth.Graph;
-using ModSynth.Rendering;
-using ModSynth.ViewModels.Presets;
+﻿using ModSynth.Rendering;
 using ModSynth.ViewModels.Presets.Abstract;
 
 namespace ModSynth.ViewModels.ViewModels
 {
     public class MainViewModel
     {
-        Preset _preset = new Preset1();
-        AudioRenderer _renderer;
+        private AudioRenderer _renderer;
+        private Preset? _preset;
 
         public MainViewModel(AudioRenderer renderer)
         {
             _renderer = renderer;
-            _renderer.Graph = _preset.SynthGraph;
             _renderer.Play();
+        }
+
+        public Preset? Preset
+        {
+            get => _preset;
+            set
+            {
+                if (value == null) return;
+
+                _preset = value;
+                _renderer.Graph = value.SynthGraph;
+            }
         }
     }
 }

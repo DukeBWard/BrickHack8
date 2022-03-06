@@ -23,10 +23,5 @@ namespace ModSynth.UI.UWP.Controls
         {
             this.InitializeComponent();
         }
-
-        private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
-        {
-
-        }
     }
 }

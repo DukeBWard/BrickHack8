@@ -11,40 +11,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="Salmon">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <controls:WaveGen x:Name="Wave2" Height="100" Width="400" Grid.Row="3" Grid.RowSpan="2" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
-            </Grid>
-            <Grid Grid.Column="1" Padding="48">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-            </Grid>
-
-        </Grid>
+        <controls:WaveGen x:Name="Wave2" Height="100" Width="400" Grid.Row="3" Grid.RowSpan="2" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
     </Grid>
 </Page>

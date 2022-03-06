@@ -13,7 +13,7 @@
     <Grid Background="LightSlateGray">
         <Frame x:Name="ViewFrame"/>
         <StackPanel Orientation="Horizontal" Margin="10,12,0,0">
-            <ComboBox Width="200" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBox Width="200">
                 <ComboBoxItem Content="Default"/>
                 <ComboBoxItem Content="Chord 3"/>
             </ComboBox>

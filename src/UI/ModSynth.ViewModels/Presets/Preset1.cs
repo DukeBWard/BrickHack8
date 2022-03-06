@@ -7,9 +7,11 @@ namespace ModSynth.ViewModels.Presets
     {
         public Preset1() : base()
         {
-            WaveGeneratorNode wave = new WaveGeneratorNode();
-            wave.FrequencyInPort.Fallback = 440;
-            SynthGraph.CreateOutputConnection(wave.WaveOutPort);
+            WaveGeneratorNode = new WaveGeneratorNode();
+            WaveGeneratorNode.FrequencyInPort.Fallback = 440;
+            SynthGraph.CreateOutputConnection(WaveGeneratorNode.WaveOutPort);
         }
+
+        public WaveGeneratorNode WaveGeneratorNode { get; }
     }
 }

@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Grid Background="LightSlateGray">
-        <Frame x:Name="ViewFrame"/>
+        <ContentControl x:Name="Frame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         <StackPanel Orientation="Horizontal" Margin="10,12,0,0">
             <ComboBox Width="200" SelectionChanged="ComboBox_SelectionChanged">
                 <ComboBoxItem Content="Default"/>
@@ -18,9 +18,9 @@
             <Button Margin="8,0" CornerRadius="4" VerticalAlignment="Top" Click="Button_Click">
                 <SymbolIcon x:Name="PlayPauseIcon" Symbol="Play"/>
             </Button>
-            <Button Margin="8,0" CornerRadius="4" VerticalAlignment="Top">
+            <!--<Button Margin="8,0" CornerRadius="4" VerticalAlignment="Top">
                 <SymbolIcon Symbol="Stop"/>
-            </Button>
+            </Button>-->
         </StackPanel>
         <TextBlock x:Name="WelcomeMsg" TextWrapping="Wrap" Text="WELCOME TO THE MOD SYNTH" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" FontFamily="Broadway" FontStyle="Normal"/>
     </Grid>

@@ -8,9 +8,10 @@ namespace ModSynth.ViewModels.ViewModels
         private WaveGeneratorNode _wgNode;
         private float _frequency;
 
-        public WaveGeneratorNodeViewModel()
+        public WaveGeneratorNodeViewModel(WaveGeneratorNode wgNode)
         {
-            _wgNode = new WaveGeneratorNode();
+            _wgNode = wgNode;
+            _frequency = wgNode.FrequencyInPort.Fallback;
         }
 
         public WaveGeneratorNode WaveGeneratorNode { get => _wgNode; }
