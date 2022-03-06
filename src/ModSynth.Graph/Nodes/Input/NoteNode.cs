@@ -22,7 +22,7 @@ namespace ModSynth.Graph.Nodes.Input
 
         public OutPort<Note> OutPort { get; }
 
-        public void Execute(AudioFrame frame)
+        public void Execute(float sample)
         {
             OutPort.Value = Note;
         }

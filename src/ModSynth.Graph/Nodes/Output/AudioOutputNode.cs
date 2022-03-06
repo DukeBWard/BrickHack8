@@ -8,14 +8,19 @@ namespace ModSynth.Graph.Nodes.Output
     {
         public AudioOutputNode()
         {
-            InPort = new InPort<AudioFrame>(this);
+            InPort = new InPort<float>(this);
         }
 
-        public InPort<AudioFrame> InPort { get; }
+        public InPort<float> InPort { get; }
 
-        public void Execute(AudioFrame frame)
+        public void Execute(float frame)
         {
             InPort.Execute(frame);
+        }
+
+        public float ExecuteOutput(float frame)
+        {
+            return InPort.Execute(frame);
         }
     }
 }

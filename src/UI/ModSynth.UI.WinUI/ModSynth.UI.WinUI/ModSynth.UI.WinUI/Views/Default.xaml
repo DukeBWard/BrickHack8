@@ -12,6 +12,6 @@
     d:DesignWidth="100">
 
     <Grid>
-        <controls:WaveGen x:Name="Wave2" Height="100" Width="400" DataContext="{x:Bind WaveViewModel, Mode=OneWay}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="40"/>
+        <controls:WaveGen Height="100" Width="400" DataContext="{x:Bind WaveViewModel, Mode=OneWay}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="40"/>
     </Grid>
 </UserControl>

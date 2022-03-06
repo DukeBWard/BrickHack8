@@ -42,6 +42,9 @@ namespace ModSynth.UI.WinUI
                 case "Default":
                     Frame.Content = new DefaultView(_mainViewModel);
                     break;
+                case "Oscilating":
+                    Frame.Content = new OscilatingView(_mainViewModel);
+                    break;
             }
         }
 

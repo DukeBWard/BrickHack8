@@ -1,0 +1,21 @@
+﻿<UserControl
+    x:Class="ModSynth.UI.WinUI.Views.OscilatingView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ModSynth.UI.WinUI.Views"
+    xmlns:controls="using:ModSynth.UI.WinUI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <controls:WaveGen Height="100" Width="400" DataContext="{x:Bind WaveViewModel1, Mode=OneWay}" Minimum="2" Maximum="10" Increment="0.01"/>
+        <controls:WaveGen Height="100" Width="400" DataContext="{x:Bind WaveViewModel2, Mode=OneWay}" Grid.Column="1" IsEnabled="False"/>
+    </Grid>
+</UserControl>

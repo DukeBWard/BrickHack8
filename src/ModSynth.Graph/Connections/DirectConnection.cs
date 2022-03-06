@@ -1,5 +1,4 @@
-﻿using ModSynth.Common;
-using ModSynth.Graph.Connections.Interfaces;
+﻿using ModSynth.Graph.Connections.Interfaces;
 using ModSynth.Graph.Ports.Interfaces;
 
 namespace ModSynth.Graph.Connections
@@ -16,9 +15,9 @@ namespace ModSynth.Graph.Connections
 
         public IPortOut<T> OutPort { get; }
 
-        public T Execute(AudioFrame frame)
+        public T Execute(float sample)
         {
-            return OutPort.Execute(frame);
+            return OutPort.Execute(sample);
         }
     }
 }

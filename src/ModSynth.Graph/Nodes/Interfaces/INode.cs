@@ -4,6 +4,6 @@ namespace ModSynth.Graph.Nodes.Interfaces
 {
     public interface INode
     {
-        void Execute(AudioFrame frame);
+        void Execute(float frame);
     }
 }
