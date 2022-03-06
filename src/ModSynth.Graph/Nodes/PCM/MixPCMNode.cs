@@ -15,7 +15,11 @@ namespace ModSynth.Graph.Nodes.PCM
 
         public InPort<AudioFrame> WaveInPortA { get; set; }
 
+        public bool UseA { get; set; }
+
         public InPort<AudioFrame> WaveInPortB { get; set; }
+
+        public bool UseB { get; set; }
 
         public OutPort<AudioFrame> WaveOutPort { get; }
 
@@ -26,7 +30,9 @@ namespace ModSynth.Graph.Nodes.PCM
 
             for (int i = 0; i < frame.Samples; i++)
             {
-                frame.Payload[i] = a.Payload[i] + b.Payload[i];
+                frame.Payload[i] = 0;
+                if (UseA) frame.Payload[i] = a.Payload[i];
+                if (UseB) frame.Payload[i] = b.Payload[i];
             }
 
             WaveOutPort.Value = frame;
