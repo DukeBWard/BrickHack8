@@ -9,6 +9,13 @@
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Controls\Mixer.xaml" />
+    <None Remove="Controls\NoteNode.xaml" />
+    <None Remove="Controls\WaveGen.xaml" />
+    <None Remove="Views\Chord3View.xaml" />
+    <None Remove="Views\Default.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
@@ -20,5 +27,23 @@
     <ProjectReference Include="..\..\..\..\ModSynth\ModSynth.csproj" />
     <ProjectReference Include="..\..\..\ModSynth.UI.AudioGraph\ModSynth.UI.AudioGraph.csproj" />
     <ProjectReference Include="..\..\..\ModSynth.ViewModels\ModSynth.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\Mixer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\NoteNode.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\WaveGen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Chord3View.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Default.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

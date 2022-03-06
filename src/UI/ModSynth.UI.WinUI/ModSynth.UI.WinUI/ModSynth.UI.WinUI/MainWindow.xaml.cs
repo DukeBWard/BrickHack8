@@ -1,5 +1,7 @@
 ﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using ModSynth.UI.WinUI.Rendering;
+using ModSynth.UI.WinUI.Views;
 using ModSynth.ViewModels.ViewModels;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -25,19 +27,36 @@ namespace ModSynth.UI.WinUI
 
         public VisualizerRunner VisualizerRunner { get; }
 
-        private async void myButton_Click(object sender, RoutedEventArgs e)
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            WelcomeMsg.Visibility = Visibility.Collapsed;
+
+            string pageName = (string)((ComboBoxItem)e.AddedItems[0]).Content;
+
+            switch (pageName)
+            {
+                case "Chord 3":
+                    ViewFrame.Navigate(typeof(Chord3View));
+                    break;
+                case "Default":
+                    ViewFrame.Navigate(typeof(Default));
+                    break;
+            }
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             if (!_renderer.IsInitialized) await _renderer.InitializeAsync();
 
             if (_renderer.IsPlaying)
             {
                 _renderer.Pause();
-                myButton.Content = "Play";
+                PlayPauseIcon.Symbol = Symbol.Play;
             }
             else
             {
                 _renderer.Play();
-                myButton.Content = "Pause";
+                PlayPauseIcon.Symbol = Symbol.Pause;
             }
         }
     }

@@ -27,22 +27,5 @@ namespace ModSynth.UI.UWP
         {
             this.InitializeComponent();
         }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            WelcomeMsg.Visibility = Visibility.Collapsed;
-
-            string pageName = (string)((ComboBoxItem)e.AddedItems[0]).Content;
-
-            switch (pageName)
-            {
-                case "Chord 3":
-                    ViewFrame.Navigate(typeof(Chord3View));
-                    break;
-                case "Default":
-                    ViewFrame.Navigate(typeof(Default));
-                    break;
-            }
-        }
     }
 }
