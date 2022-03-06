@@ -3,7 +3,6 @@ using ModSynth.Common.Enums;
 using ModSynth.Graph.Nodes.Interfaces;
 using ModSynth.Graph.Ports;
 using System;
-using System.Runtime.CompilerServices;
 
 namespace ModSynth.Graph.Nodes.PCM
 {
