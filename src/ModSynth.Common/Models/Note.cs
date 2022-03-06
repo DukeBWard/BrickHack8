@@ -1,7 +1,9 @@
 ﻿using ModSynth.Common.Enums;
+using System.Diagnostics;
 
 namespace ModSynth.Common.Models
 {
+    [DebuggerDisplay("{ToString()}")]
     public struct Note
     {
         public Note(NoteName name, int octave)
@@ -25,6 +27,12 @@ namespace ModSynth.Common.Models
             int octaveDiff = a.Octave - b.Octave;
             int noteDiff = a.NoteName - b.NoteName;
             return octaveDiff * 12 + noteDiff;
+        }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            return $"{NoteName.NoteString()}{Octave}";
         }
     }
 }
