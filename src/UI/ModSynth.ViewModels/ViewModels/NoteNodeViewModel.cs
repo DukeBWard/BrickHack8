@@ -4,7 +4,7 @@ using ModSynth.Graph.Nodes.Input;
 
 namespace ModSynth.ViewModels
 {
-    internal class NoteNodeViewModel : ObservableObject
+    public class NoteNodeViewModel : ObservableObject
     {
         NoteNode _noteNode;
         string _noteString;
