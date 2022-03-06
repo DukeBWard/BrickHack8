@@ -12,32 +12,19 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using ModSynth.UI.UWP.Views;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace ModSynth.UI.UWP
+namespace ModSynth.UI.UWP.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class Chord3View : Page
     {
-        public MainPage()
+        public Chord3View()
         {
             this.InitializeComponent();
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string pageName = (string)((ComboBoxItem)e.AddedItems[0]).Content;
-
-            switch (pageName)
-            {
-                case "Chord 3":
-                    ViewFrame.Navigate(typeof(Chord3View));
-                    break;
-            }
         }
     }
 }
