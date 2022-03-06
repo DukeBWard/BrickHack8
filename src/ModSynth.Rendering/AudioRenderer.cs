@@ -9,7 +9,10 @@ namespace ModSynth.Rendering
 
         protected AudioFrame GenerateFrame(AudioFrame frame)
         {
-            Graph.OutputNode.Execute(frame);
+            for (int i = 0; i < frame.Payload.Length; i++)
+            {
+                frame.Payload[i] = Graph.OutputNode.ExecuteOutput((float)(frame.Theta + (i * frame.SampleIncrement)));
+            }
             return frame;
         }
 

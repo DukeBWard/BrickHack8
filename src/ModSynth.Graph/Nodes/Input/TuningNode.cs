@@ -21,10 +21,10 @@ namespace ModSynth.Graph.Nodes.Input
 
         public OutPort<Tuning> OutPort { get; }
 
-        public void Execute(AudioFrame frame)
+        public void Execute(float sample)
         {
-            Note note = BasisNoteInPort.Execute(frame);
-            float frequency = BasisFrequencyInPort.Execute(frame);
+            Note note = BasisNoteInPort.Execute(sample);
+            float frequency = BasisFrequencyInPort.Execute(sample);
             OutPort.Value = new Tuning(TuningType.EqualTempered, note, frequency);
         }
     }

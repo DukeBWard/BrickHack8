@@ -15,7 +15,7 @@ namespace ModSynth.Graph.Nodes.Input
 
         public OutPort<float> OutPort { get; }
 
-        public void Execute(AudioFrame frame)
+        public void Execute(float sample)
         {
             OutPort.Value = Frequency;
         }

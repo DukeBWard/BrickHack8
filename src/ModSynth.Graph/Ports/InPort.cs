@@ -24,7 +24,7 @@ namespace ModSynth.Graph.Ports
             Connection = connection;
         }
 
-        public T Execute(AudioFrame frame)
+        public T Execute(float frame)
         {
             if (Connection == null) return Fallback;
             return Connection.Execute(frame);

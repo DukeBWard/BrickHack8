@@ -20,9 +20,9 @@ namespace ModSynth.Graph.Ports
 
         public T Value { get; set; }
 
-        public T Execute(AudioFrame frame)
+        public T Execute(float sample)
         {
-            Owner.Execute(frame);
+            Owner.Execute(sample);
             return Value;
         }
     }

@@ -20,10 +20,10 @@ namespace ModSynth.Graph.Nodes.Conversion
 
         public OutPort<float> OutPort { get; }
 
-        public void Execute(AudioFrame frame)
+        public void Execute(float sample)
         {
-            Note note = InPort.Execute(frame);
-            Tuning tuning = TuningInPort.Execute(frame);
+            Note note = InPort.Execute(sample);
+            Tuning tuning = TuningInPort.Execute(sample);
             OutPort.Value = tuning.TuneNote(note);
         }
     }
