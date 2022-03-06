@@ -6,6 +6,7 @@ namespace ModSynth.ViewModels.ViewModels
     public class WaveGeneratorNodeViewModel : ObservableObject
     {
         private WaveGeneratorNode _wgNode;
+        private float _frequency;
 
         public WaveGeneratorNodeViewModel()
         {
@@ -14,6 +15,14 @@ namespace ModSynth.ViewModels.ViewModels
 
         public WaveGeneratorNode WaveGeneratorNode { get => _wgNode; }
 
-        public float Frequency { get => _wgNode.FrequencyInPort.Fallback;}
+        public float Frequency 
+        { 
+            get => _frequency;
+            set
+            {
+                SetProperty(ref _frequency, value);
+                _wgNode.FrequencyInPort.Fallback = value;
+            }
+        }
     }
 }
