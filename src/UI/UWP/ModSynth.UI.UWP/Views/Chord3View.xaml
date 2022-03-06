@@ -1,8 +1,8 @@
 ﻿<Page
-    x:Class="ModSynth.UI.UWP.MainPage"
+    x:Class="ModSynth.UI.UWP.Views.Chord3View"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ModSynth.UI.UWP"
+    xmlns:local="using:ModSynth.UI.UWP.Views"
     xmlns:views="using:ModSynth.UI.UWP.Views"
     xmlns:controls="using:ModSynth.UI.UWP.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,11 +11,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="PowderBlue">
-        <Frame x:Name="ViewFrame"/>
-        <ComboBox Width="200" Margin="10,10,0,0" SelectionChanged="ComboBox_SelectionChanged">
-            <ComboBoxItem Content="Chord 3"/>
-        </ComboBox>
-        <MediaTransportControls x:Name="Media_Controls" Margin="0,903,0,0"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
