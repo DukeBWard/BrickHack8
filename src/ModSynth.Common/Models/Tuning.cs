@@ -5,6 +5,8 @@ namespace ModSynth.Common.Models
 {
     public struct Tuning
     {
+        public static Tuning StandardTuning = new Tuning(TuningType.EqualTempered, new Note(NoteName.A, 4), 440);
+
         public Tuning(TuningType type, Note note, float frequency)
         {
             TuningType = type;
