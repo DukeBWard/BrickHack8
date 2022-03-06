@@ -10,10 +10,11 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="PowderBlue">
+    <Grid Background="LightSlateGray">
         <Frame x:Name="ViewFrame"/>
         <StackPanel Orientation="Horizontal" Margin="10,12,0,0">
             <ComboBox Width="200" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem Content="Default"/>
                 <ComboBoxItem Content="Chord 3"/>
             </ComboBox>
             <Button Margin="8,0" CornerRadius="4" VerticalAlignment="Top">
@@ -59,7 +60,7 @@
                 </Grid.RowDefinitions>
                 <controls:Mixer Grid.Row="1" Grid.RowSpan="3"/>
             </Grid>
-            <Grid Grid.Column="2" Padding="48">
+            <Grid Grid.Column="2" Padding="24">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>

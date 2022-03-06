@@ -37,6 +37,9 @@ namespace ModSynth.UI.UWP
                 case "Chord 3":
                     ViewFrame.Navigate(typeof(Chord3View));
                     break;
+                case "Default":
+                    ViewFrame.Navigate(typeof(Default));
+                    break;
             }
         }
     }
