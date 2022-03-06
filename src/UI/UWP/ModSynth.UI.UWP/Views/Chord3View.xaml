@@ -34,14 +34,32 @@
                 <controls:NoteNode x:Name="Note3" Width="100" Height="50" Grid.Row="2" Grid.Column="0"/>
                 <controls:WaveGen x:Name="Wave3" Height="100" Width="400" Grid.Row="2" Grid.Column="1"/>
             </Grid>
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Padding="48">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <controls:Mixer/>
+                <controls:Mixer Grid.Row="1" Grid.RowSpan="3"/>
             </Grid>
-            <controls:Mixer Grid.Column="2"/>
+            <Grid Grid.Column="2" Padding="48">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <controls:Mixer Grid.Row="2" Grid.RowSpan="4"/>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

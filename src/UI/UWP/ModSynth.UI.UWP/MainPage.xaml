@@ -12,10 +12,17 @@
 
     <Grid Background="PowderBlue">
         <Frame x:Name="ViewFrame"/>
-        <ComboBox Width="200" Margin="10,10,0,0" SelectionChanged="ComboBox_SelectionChanged">
-            <ComboBoxItem Content="Chord 3"/>
-        </ComboBox>
-        <MediaTransportControls x:Name="Media_Controls" Margin="0,903,0,0"/>
+        <StackPanel Orientation="Horizontal" Margin="10,12,0,0">
+            <ComboBox Width="200" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem Content="Chord 3"/>
+            </ComboBox>
+            <Button Margin="8,0" CornerRadius="4" VerticalAlignment="Top">
+                <SymbolIcon Symbol="Play"/>
+            </Button>
+            <Button Margin="8,0" CornerRadius="4" VerticalAlignment="Top">
+                <SymbolIcon Symbol="Stop"/>
+            </Button>
+        </StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -39,14 +46,32 @@
                 <controls:NoteNode x:Name="Note3" Width="100" Height="50" Grid.Row="2" Grid.Column="0"/>
                 <controls:WaveGen x:Name="Wave3" Height="100" Width="400" Grid.Row="2" Grid.Column="1"/>
             </Grid>
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Padding="48">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <controls:Mixer/>
+                <controls:Mixer Grid.Row="1" Grid.RowSpan="3"/>
             </Grid>
-            <controls:Mixer Grid.Column="2"/>
+            <Grid Grid.Column="2" Padding="48">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <controls:Mixer Grid.Row="2" Grid.RowSpan="4"/>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
