@@ -26,6 +26,8 @@ namespace ModSynth.Graph
 
             // Create Nodes
             TuningNode tuning = new TuningNode();
+            tuning.BasisNoteInPort.Fallback = new Note(NoteName.A, 4);
+            tuning.BasisFrequencyInPort.Fallback = 440;
             NoteToFrequencyNode a3Freq = new NoteToFrequencyNode();
             a3Freq.InPort.Fallback = new Note(NoteName.A, 3);
             NoteToFrequencyNode c4Freq = new NoteToFrequencyNode();
